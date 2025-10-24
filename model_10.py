@@ -2,7 +2,7 @@ import pandas as pd
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-df = pd.read_csv("../../data/datasets/emails.csv")
+df = pd.read_csv("emails.csv")
 X = df.iloc[:, 0]
 y = df.iloc[:, 1]
 
@@ -35,3 +35,4 @@ toPredict_vect = vectorizer.transform([toPredict_clean])
 
 score = round(model.score(X, y) * 100, 2)
 prediction = model.predict(toPredict_vect)[0]
+
